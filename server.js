@@ -7,6 +7,19 @@ const app = express();
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
+const mysql = require('mysql2');
+
+// Connect to database
+const db = mysql.createConnection(
+    {
+        host: 'localhost',
+        user: 'root',
+        password: 'Ch00Ch00Tr@1n',
+        database: 'election'
+    },
+    console.log('Connected to the election database.')
+);
+
 // app.get('/', (req, res) => {
 //     res.json({
 //         message: `It's alive!`
